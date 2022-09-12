@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 
+import me.desmondcchi.smash.ChampKits.ArcherKit;
 import me.desmondcchi.smash.ChampKits.KnightKit;
 import net.md_5.bungee.api.ChatColor;
 
@@ -27,6 +28,12 @@ public class InventoryClick implements Listener {
 					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.GRAY + "Knight" + ChatColor.GOLD + "!", null, 20, 80, 20);
 					
 					KnightKit.equip(player.getInventory());
+				}
+				else if (event.getCurrentItem().getType() == Material.BOW) {
+					player.closeInventory();
+					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.GRAY + "Archer" + ChatColor.GOLD + "!", null, 20, 80, 20);
+				
+					ArcherKit.equip(player.getInventory());
 				}
 			}
 		}
