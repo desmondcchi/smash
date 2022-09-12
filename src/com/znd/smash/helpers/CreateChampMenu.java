@@ -41,6 +41,8 @@ public class CreateChampMenu {
 		
 		meta.addEnchant(Enchantment.DURABILITY, 1, true);
 		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		
 		item.setItemMeta(meta);
 		
 		return item;		
