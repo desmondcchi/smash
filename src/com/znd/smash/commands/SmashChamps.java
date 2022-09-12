@@ -1,5 +1,6 @@
 package com.znd.smash.commands;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +36,16 @@ public class SmashChamps implements CommandExecutor {
 	
 	private static Inventory createChampMenu() {
 		Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.GOLD + "" + ChatColor.BOLD + "Smash Champs");
+		inventory.setItem(0, createSorcererMenuKit());
+		inventory.setItem(1, createNinjaMenuKit());
+		inventory.setItem(2, createIceMageMenuKit());
+		inventory.setItem(3, createArcherMenuKit());
 		inventory.setItem(4, createPyroMenuKit());
+		inventory.setItem(5, createDragonbornMenuKit());
+		inventory.setItem(6, createDemonMenuKit());
+		inventory.setItem(7, createKnightMenuKit());
 		
+
 		return inventory;
 	}	
 	
