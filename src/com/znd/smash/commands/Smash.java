@@ -8,7 +8,7 @@ import org.bukkit.inventory.Inventory;
 
 import com.znd.smash.helpers.CreateChampMenu;
 
-public class SmashChamps implements CommandExecutor {
+public class Smash implements CommandExecutor {
 	public static Inventory champMenu = CreateChampMenu.createChampMenu();
 	
 	@Override
