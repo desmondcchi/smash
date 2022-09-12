@@ -18,6 +18,7 @@ public class CreateChampMenu {
 		Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.GOLD + "" + ChatColor.BOLD + "Smash Champs");
 		inventory.setItem(0, createKnightMenuKit());
 		inventory.setItem(1, createArcherMenuKit());
+		inventory.setItem(2, createTankMenuKit());
 //		inventory.setItem(1, createNinjaMenuKit());
 //		inventory.setItem(2, createIceMageMenuKit());
 //		inventory.setItem(4, createPyroMenuKit());
@@ -65,6 +66,25 @@ public class CreateChampMenu {
 		item.setItemMeta(meta);
 		
 		return item;		
+	}
+	
+	private static ItemStack createTankMenuKit() {
+		ItemStack item = new ItemStack(Material.NETHERITE_CHESTPLATE);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.BLUE + "Tank");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+		
+		item.setItemMeta(meta);
+		
+		return item;
 	}
 	
 	private static ItemStack createPyroMenuKit() {
