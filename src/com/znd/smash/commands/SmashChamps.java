@@ -1,5 +1,6 @@
 package com.znd.smash.commands;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +36,16 @@ public class SmashChamps implements CommandExecutor {
 	
 	private static Inventory createChampMenu() {
 		Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.GOLD + "" + ChatColor.BOLD + "Smash Champs");
+		inventory.setItem(0, createSorcererMenuKit());
+		inventory.setItem(1, createNinjaMenuKit());
+		inventory.setItem(2, createIceMageMenuKit());
+		inventory.setItem(3, createArcherMenuKit());
 		inventory.setItem(4, createPyroMenuKit());
+		inventory.setItem(5, createDragonbornMenuKit());
+		inventory.setItem(6, createDemonMenuKit());
+		inventory.setItem(7, createKnightMenuKit());
 		
+
 		return inventory;
 	}	
 	
@@ -56,4 +65,124 @@ public class SmashChamps implements CommandExecutor {
 		
 		return item;
 	}
+	
+	private static ItemStack createDragonbornMenuKit() {
+		ItemStack item = new ItemStack(Material.DRAGON_EGG);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Dragonborn");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createDemonMenuKit() {
+		ItemStack item = new ItemStack(Material.REDSTONE);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.DARK_RED + "Demon");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createKnightMenuKit() {
+		ItemStack item = new ItemStack(Material.IRON_SWORD);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.GRAY + "Knight");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createArcherMenuKit() {
+		ItemStack item = new ItemStack(Material.BOW);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.GREEN + "Archer");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createSorcererMenuKit() {
+		ItemStack item = new ItemStack(Material.BOOK);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.BLUE + "Sorcerer");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createNinjaMenuKit() {
+		ItemStack item = new ItemStack(Material.STRING);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.WHITE + "Ninja");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
+	private static ItemStack createIceMageMenuKit() {
+		ItemStack item = new ItemStack(Material.POWDER_SNOW_BUCKET);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.AQUA + "Ice Mage");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;
+	}
+	
 }
