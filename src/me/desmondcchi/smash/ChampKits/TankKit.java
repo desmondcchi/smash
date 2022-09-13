@@ -34,7 +34,8 @@ public class TankKit {
 		
 		List<String> lore = new ArrayList<String>();
 		lore.add("");
-		lore.add(ChatColor.GOLD + "Charge up ultimate by blocking hits with the shield or taking damage.");
+		lore.add(ChatColor.GOLD + "Charge up ultimate by blocking hits with ");
+	    lore.add(ChatColor.GOLD + "shield or taking daamage.");
 		lore.add("");
 		meta.setLore(lore);
 		
