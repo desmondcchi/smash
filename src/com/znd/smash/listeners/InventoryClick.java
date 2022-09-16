@@ -9,6 +9,7 @@ import org.bukkit.event.inventory.InventoryType;
 
 import me.desmondcchi.smash.ChampKits.ArcherKit;
 import me.desmondcchi.smash.ChampKits.KnightKit;
+import me.desmondcchi.smash.ChampKits.NinjaKit;
 import me.desmondcchi.smash.ChampKits.TankKit;
 import net.md_5.bungee.api.ChatColor;
 
@@ -41,6 +42,12 @@ public class InventoryClick implements Listener {
 					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.BLUE + "Tank" + ChatColor.GOLD + "!", null, 20, 80, 20);
 					
 					TankKit.equip(player.getInventory());
+				}
+				else if (event.getCurrentItem().getType() == Material.NETHER_STAR) {
+					player.closeInventory();
+					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.WHITE + "Ninja" + ChatColor.GOLD + "!", null, 20, 80, 20);
+					
+					NinjaKit.equip(player.getInventory());
 				}
 			}
 		}
