@@ -12,8 +12,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class CreateChampMenu {
-
+public class CreateChampMenu {	
 	public static Inventory createChampMenu() {
 		Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.GOLD + "" + ChatColor.BOLD + "Smash Champs");
 		inventory.setItem(0, createKnightMenuKit());
