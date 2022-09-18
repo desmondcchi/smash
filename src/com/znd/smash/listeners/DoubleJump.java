@@ -6,15 +6,24 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 public class DoubleJump implements Listener {
+	private Plugin plugin;
+	
+	public DoubleJump(Plugin plugin) {
+		this.plugin = plugin;
+	}
+	
 	//TODO: Set cooldown for double jump and only allow ninjas to double jump.
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		
-		player.setAllowFlight(true);
+		if (plugin.getConfig().getList("ninja").contains(player.getUniqueId().toString())) {
+			player.setAllowFlight(true);
+		}
 	}
 	
 	@EventHandler
