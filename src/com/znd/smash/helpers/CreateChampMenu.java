@@ -18,7 +18,7 @@ public class CreateChampMenu {
 		inventory.setItem(0, createKnightMenuKit());
 		inventory.setItem(1, createArcherMenuKit());
 		inventory.setItem(2, createTankMenuKit());
-//		inventory.setItem(1, createNinjaMenuKit());
+		inventory.setItem(3, createNinjaMenuKit());
 //		inventory.setItem(2, createIceMageMenuKit());
 //		inventory.setItem(4, createPyroMenuKit());
 //		inventory.setItem(5, createDragonbornMenuKit());
@@ -86,6 +86,23 @@ public class CreateChampMenu {
 		return item;
 	}
 	
+	private static ItemStack createNinjaMenuKit() {
+		ItemStack item = new ItemStack(Material.NETHER_STAR);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.WHITE + "Ninja");
+		
+		List<String> lore = new ArrayList<String>();
+		lore.add("");
+		lore.add(ChatColor.RED + "Click to select kit!");
+		meta.setLore(lore);
+		
+		meta.addEnchant(Enchantment.DURABILITY, 1, true);
+		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		item.setItemMeta(meta);
+		
+		return item;		
+	}
+	
 	private static ItemStack createPyroMenuKit() {
 		ItemStack item = new ItemStack(Material.BLAZE_POWDER);
 		ItemMeta meta = item.getItemMeta();
@@ -141,23 +158,6 @@ public class CreateChampMenu {
 		ItemStack item = new ItemStack(Material.BOOK);
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName(ChatColor.BLUE + "Sorcerer");
-		
-		List<String> lore = new ArrayList<String>();
-		lore.add("");
-		lore.add(ChatColor.RED + "Click to select kit!");
-		meta.setLore(lore);
-		
-		meta.addEnchant(Enchantment.DURABILITY, 1, true);
-		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-		item.setItemMeta(meta);
-		
-		return item;		
-	}
-	
-	private static ItemStack createNinjaMenuKit() {
-		ItemStack item = new ItemStack(Material.STRING);
-		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName(ChatColor.WHITE + "Ninja");
 		
 		List<String> lore = new ArrayList<String>();
 		lore.add("");

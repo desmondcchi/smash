@@ -10,13 +10,14 @@ import com.znd.smash.listeners.InventoryClick;
 public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
+		ChampionPlayerLists playerLists = new ChampionPlayerLists();
+		
 		this.getConfig().addDefault("knight", "");
 		this.getConfig().addDefault("archer", "");
 		this.getConfig().addDefault("tank", "");
+		this.getConfig().addDefault("ninja", "");
 		this.getConfig().options().copyDefaults(true);
 		this.saveConfig();
-		
-		ChampionPlayerLists playerLists = new ChampionPlayerLists();
 		
 		//Commands
 		this.getCommand("smash").setExecutor(new Smash());

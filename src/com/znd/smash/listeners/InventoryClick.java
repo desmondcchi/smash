@@ -16,6 +16,7 @@ import com.znd.smash.helpers.ChampionPlayerLists.ListNames;
 
 import me.desmondcchi.smash.ChampKits.ArcherKit;
 import me.desmondcchi.smash.ChampKits.KnightKit;
+import me.desmondcchi.smash.ChampKits.NinjaKit;
 import me.desmondcchi.smash.ChampKits.TankKit;
 import net.md_5.bungee.api.ChatColor;
 
@@ -43,10 +44,7 @@ public class InventoryClick implements Listener {
 					player.closeInventory();
 					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.GRAY + "Knight" + ChatColor.GOLD + "!", null, 20, 80, 20);
 					
-					player.sendMessage(ChampionPlayerLists.playerListMap.keySet().toString());
 					updateConfig(playerUUID, ListNames.KNIGHT);
-					
-					player.setAllowFlight(true);
 					
 					KnightKit.equip(player.getInventory());
 				}
@@ -66,11 +64,21 @@ public class InventoryClick implements Listener {
 					
 					TankKit.equip(player.getInventory());
 				}
+				else if (event.getCurrentItem().getType() == Material.NETHER_STAR) {
+					player.closeInventory();
+					player.sendTitle(ChatColor.GOLD + "Selected " + ChatColor.WHITE + "Ninja" + ChatColor.GOLD + "!", null, 20, 80, 20);
+					
+					updateConfig(playerUUID, ListNames.NINJA);
+					
+					NinjaKit.equip(player.getInventory());
+				}
 			}
 		}
 	}
 	
 	// Helper function updating the config.yml file by adding the given player to the appropriate champion list.
+	// If additional champions are created or deleted, Main.java (config defaults) and ChampionPlayerLists.java 
+	//needs to be updated (enum, ArrayLists, and HashMap) along with the switch case below.
 	private void updateConfig(String playerUUID, ListNames name) {
 		removePlayerFromAllLists(playerUUID);
 		
@@ -83,6 +91,9 @@ public class InventoryClick implements Listener {
 				break;
 			case TANK:
 				ChampionPlayerLists.tankList.add(playerUUID);
+				break;
+			case NINJA:
+				ChampionPlayerLists.ninjaList.add(playerUUID);
 				break;
 		}
 		

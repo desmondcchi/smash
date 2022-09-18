@@ -8,11 +8,13 @@ public class ChampionPlayerLists {
 		KNIGHT,
 		ARCHER,
 		TANK,
+		NINJA,
 	};
 	
 	public static ArrayList<String> knightList = new ArrayList<String>();
 	public static ArrayList<String> archerList = new ArrayList<String>();
 	public static ArrayList<String> tankList = new ArrayList<String>();
+	public static ArrayList<String> ninjaList = new ArrayList<String>();
 	
 	public static HashMap<String, ArrayList<String>> playerListMap = new HashMap<String, ArrayList<String>>();
 	
@@ -20,5 +22,6 @@ public class ChampionPlayerLists {
 		playerListMap.put("knight", knightList);
 		playerListMap.put("archer", archerList);
 		playerListMap.put("tank", tankList);
+		playerListMap.put("ninja", ninjaList);
 	}
 }
