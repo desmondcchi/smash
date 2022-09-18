@@ -3,12 +3,14 @@ package me.desmondcchi.smash.ChampKits;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -43,10 +45,11 @@ public class NinjaKit {
 	}
 	
 	private static ItemStack createNinjaBoots() {
-		ItemStack item = new ItemStack(Material.GOLDEN_BOOTS);
-		ItemMeta meta = item.getItemMeta();
+		ItemStack item = new ItemStack(Material.LEATHER_BOOTS);
+		LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
 		
 		meta.setDisplayName(ChatColor.WHITE + "Ninja Boots");
+		meta.setColor(Color.BLACK);
 		meta.setUnbreakable(true);
 		meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
 		
